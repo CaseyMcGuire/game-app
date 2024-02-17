@@ -1,0 +1,54 @@
+{
+  "name": "puzzlr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "node_modules/webpack-cli/bin/cli.js --config webpack.production.js",
+    "webpack-development": "node_modules/webpack-cli/bin/cli.js --config webpack.development.js",
+    "relay": "relay-compiler"
+  },
+  "relay": {
+    "src": "src/main/web-frontend",
+    "language": "typescript",
+    "schema": "src/main/resources/schema/schema.graphql",
+    "artifactDirectory": "./src/main/web-frontend/__generated__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaseyMcGuire/puzzlr-kotlin.git"
+  },
+  "author": "Casey McGuire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaseyMcGuire/puzzlr-kotlin/issues"
+  },
+  "homepage": "https://github.com/CaseyMcGuire/puzzlr-kotlin#readme",
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/runtime": "^7.17.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.0.4",
+    "react-relay": "^16.2.0",
+    "react-router-dom": "^6.22.0",
+    "relay-runtime": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/react-relay": "^14.1.3",
+    "@types/relay-runtime": "^14.1.23",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-relay": "^8.0.0",
+    "graphql": "^16.8.1",
+    "graphql-compiler": "^1.7.0",
+    "relay-compiler": "^16.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^4.2.2"
+  }
+}

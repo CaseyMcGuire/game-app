@@ -1,0 +1,21 @@
+#!/bin/sh
+
+LOCAL_ENV_FILE=./.env
+
+if test -f "$LOCAL_ENV_FILE"; then
+    # https://stackoverflow.com/a/30969768/11283051
+    set -o allexport
+    source "$LOCAL_ENV_FILE"
+    set +o allexport
+  else
+    echo "No .env file"
+    exit 1
+fi
+
+DB_USER=${DB_USER}
+DB_PASS=${DB_PASSWORD}
+DB_NAME=${DB_NAME}
+
+psql -U postgres -c "CREATE USER $DB_USER WITH ENCRYPTED PASSWORD '$DB_PASS';"
+psql -U postgres -c "CREATE DATABASE $DB_NAME;"
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;"

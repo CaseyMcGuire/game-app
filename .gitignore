@@ -1,0 +1,13 @@
+.gradle
+# exclude all intellij files except for our run configuration
+.idea/*
+!.idea/runConfigurations
+
+build/
+out/
+
+node_modules
+
+src/main/resources/static/bundles
+
+.env

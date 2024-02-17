@@ -1,0 +1,5 @@
+type Query {
+    bar(baz: String!): String!
+    foo: String!
+}
+

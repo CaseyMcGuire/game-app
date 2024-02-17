@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": "src/main/web-frontend",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "es2015",
+    "target": "es2015",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowJs": false
+  }
+}
