@@ -3,7 +3,10 @@ import * as React from "react";
 import { FooBar_murp$key } from "__generated__/FooBar_murp.graphql";
 import {useFragment} from "react-relay/hooks";
 
-export default function FooBar(props: {murp: FooBar_murp$key}) {
+type Props = {
+  murp: FooBar_murp$key
+}
+export default function FooBar(props: Props) {
   const data = useFragment(
     graphql`
       fragment FooBar_murp on Query {

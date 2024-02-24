@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<addd8e75fec66a462b15ef189989d86b>>
+ * @generated SignedSource<<0ae2aaa272de60761d6bc0fa064b168b>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,14 +10,14 @@
 
 import { ConcreteRequest, Query } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type FooQuery$variables = Record<PropertyKey, never>;
-export type FooQuery$data = {
+export type HomePageQuery$variables = Record<PropertyKey, never>;
+export type HomePageQuery$data = {
   readonly bar: string;
   readonly " $fragmentSpreads": FragmentRefs<"FooBar_murp">;
 };
-export type FooQuery = {
-  response: FooQuery$data;
-  variables: FooQuery$variables;
+export type HomePageQuery = {
+  response: HomePageQuery$data;
+  variables: HomePageQuery$variables;
 };
 
 const node: ConcreteRequest = (function(){
@@ -27,19 +27,19 @@ var v0 = {
     {
       "kind": "Literal",
       "name": "baz",
-      "value": "asldkfj"
+      "value": ""
     }
   ],
   "kind": "ScalarField",
   "name": "bar",
-  "storageKey": "bar(baz:\"asldkfj\")"
+  "storageKey": "bar(baz:\"\")"
 };
 return {
   "fragment": {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "FooQuery",
+    "name": "HomePageQuery",
     "selections": [
       (v0/*: any*/),
       {
@@ -55,7 +55,7 @@ return {
   "operation": {
     "argumentDefinitions": [],
     "kind": "Operation",
-    "name": "FooQuery",
+    "name": "HomePageQuery",
     "selections": [
       (v0/*: any*/),
       {
@@ -81,16 +81,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "30647c93fa96b5e400894ff144ba8138",
+    "cacheID": "1c02a9b6ac60dc99b5d4dac067eca579",
     "id": null,
     "metadata": {},
-    "name": "FooQuery",
+    "name": "HomePageQuery",
     "operationKind": "query",
-    "text": "query FooQuery {\n  bar(baz: \"asldkfj\")\n  ...FooBar_murp\n}\n\nfragment FooBar_murp on Query {\n  foo\n  murp: bar(baz: \"aljskdfasf\")\n}\n"
+    "text": "query HomePageQuery {\n  bar(baz: \"\")\n  ...FooBar_murp\n}\n\nfragment FooBar_murp on Query {\n  foo\n  murp: bar(baz: \"aljskdfasf\")\n}\n"
   }
 };
 })();
 
-(node as any).hash = "b03a2748be840aaf8f16509cf45220ad";
+(node as any).hash = "e68fa1507ee2d3bda814332e0e76a542";
 
 export default node;

@@ -1,6 +1,5 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
-import {QueryRenderer, graphql} from "react-relay";
+import { graphql } from "react-relay";
 import {RelayConfig} from "relay/RelayConfig";
 import {AppQuery} from "__generated__/AppQuery.graphql";
 import {
@@ -10,7 +9,7 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import {createUseStyles}  from "react-jss";
-import Foo from "pages/Foo";
+import HomePage from "pages/HomePage";
 import {useLazyLoadQuery} from "react-relay/hooks";
 import {RelayEnvironmentProvider} from "react-relay/hooks";
 import {createRoot} from "react-dom/client";
@@ -56,7 +55,7 @@ const Body = () => {
     <Link to="/there">There</Link>
     <Link to="/foo_bar">foo bar</Link>
     <Routes>
-      <Route path="/" element={<Foo />}/>
+      <Route path="/" element={<HomePage />}/>
       <Route path="/there" element={<Bar />}/>
       <Route path="/foo_bar" element={<Baz /> }/>
       <Route element={<Forohfor />}/>
