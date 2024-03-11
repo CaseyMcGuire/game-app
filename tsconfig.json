@@ -10,6 +10,7 @@
     "target": "es2015",
     "moduleResolution": "node",
     "jsx": "react",
-    "allowJs": false
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true
   }
 }
