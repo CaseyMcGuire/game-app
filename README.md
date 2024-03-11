@@ -1,3 +1,5 @@
+# Full Stack Spring Boot/React/GraphQL Template
+
 This is a project template I use for creating new web applications. It uses the following technologies
 - [Kotlin](https://kotlinlang.org/) as the server-side language of choice
 - [Spring Boot](https://spring.io/projects/spring-boot) as the web application framework 

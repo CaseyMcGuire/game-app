@@ -6,7 +6,7 @@ plugins {
   id("org.jetbrains.kotlin.jvm") version "1.9.22"
   id("org.springframework.boot") version "3.2.2"
   id("io.spring.dependency-management") version "1.1.0"
-  id("com.github.node-gradle.node") version "3.4.0"
+  id("com.github.node-gradle.node") version "7.0.2"
   id("com.netflix.dgs.codegen") version "5.2.4"
   id("nu.studer.jooq") version "8.0"
   id("org.flywaydb.flyway") version "9.6.0"
@@ -63,7 +63,13 @@ tasks.register<NpmTask>("buildRelay") {
   npmCommand.set(listOf("run", "relay"))
 }
 
-tasks.getByName<BootRun>("bootRun") {
+tasks.register<NpmTask>("generateReactPages") {
+  npmCommand.set(listOf("run", "generate-react-pages"))
+}
+
+// make sure webpack runs before the processResources task so the TypeScript files are compiled before
+// being copied into the build folder
+tasks.processResources {
   dependsOn("npm_install", "webpack")
 }
 

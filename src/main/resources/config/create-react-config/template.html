@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta id="csrf-token" name="_csrf" th:content="${_csrf.token}"/>
+    <meta id="csrf-header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title>@PAGE_TITLE@</title>
+
+    <script type="text/javascript" src="/assets/javascripts/react.production.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/react-dom.production.min.js"></script>
+    <style>
+        html, body, #root {
+            height: 100%;
+        }
+    </style>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
+</head>
+<body>
+<div id="root"></div>
+<script src="@BUNDLE_PATH@"></script>
+</body>
+</html>

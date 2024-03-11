@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql } from "react-relay";
+import {graphql} from "react-relay";
 import {RelayConfig} from "relay/RelayConfig";
 import {AppQuery} from "__generated__/AppQuery.graphql";
 import {
@@ -13,8 +13,11 @@ import HomePage from "pages/HomePage";
 import {useLazyLoadQuery} from "react-relay/hooks";
 import {RelayEnvironmentProvider} from "react-relay/hooks";
 import {createRoot} from "react-dom/client";
+import AboutPage from "./pages/AboutPage";
+import BlogPage from "./pages/BlogPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
-const styles = createUseStyles({
+const useStyles = createUseStyles({
   foo: {
     color: 'blue',
     margin: '10px'
@@ -44,36 +47,22 @@ function AppImpl() {
       foo
     }
   `;
-
+  const styles = useStyles();
   const response = useLazyLoadQuery<AppQuery>(query, {})
-  return <Body />
+  return (
+    <BrowserRouter>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/blog">Blog</Link>
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/about" element={<AboutPage />}/>
+        <Route path="/blog" element={<BlogPage /> }/>
+        <Route element={<NotFoundPage />}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-const Body = () => {
-  return (<BrowserRouter>
-    <Link to="/">Home</Link>
-    <Link to="/there">There</Link>
-    <Link to="/foo_bar">foo bar</Link>
-    <Routes>
-      <Route path="/" element={<HomePage />}/>
-      <Route path="/there" element={<Bar />}/>
-      <Route path="/foo_bar" element={<Baz /> }/>
-      <Route element={<Forohfor />}/>
-    </Routes>
-  </BrowserRouter>);
-};
-
-const Bar = () => {
-  return <div className={styles().bar}>there</div>;
-};
-
-const Baz = () => {
-  return <div className={styles().baz}>baz</div>;
-};
-
-const Forohfor = () => {
-  return <div>404</div>;
-};
 
 const root = createRoot(document.getElementById("root")!);
 root.render(<App />);

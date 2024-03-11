@@ -6,7 +6,8 @@
   "scripts": {
     "webpack": "node_modules/webpack-cli/bin/cli.js --config webpack.production.js",
     "webpack-development": "node_modules/webpack-cli/bin/cli.js --config webpack.development.js",
-    "relay": "relay-compiler"
+    "relay": "relay-compiler",
+    "generate-react-pages": "babel-node -x .tsx -- ./bin/generateReactPage.tsx"
   },
   "relay": {
     "src": "src/main/web-frontend",
@@ -25,7 +26,6 @@
   },
   "homepage": "https://github.com/CaseyMcGuire/puzzlr-kotlin#readme",
   "dependencies": {
-    "@babel/core": "^7.21.4",
     "@babel/runtime": "^7.17.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,6 +35,11 @@
     "relay-runtime": "^16.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/react-relay": "^14.1.3",
