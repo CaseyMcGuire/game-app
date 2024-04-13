@@ -1,0 +1,47 @@
+type Mutation {
+  createUser(input: CreateUserInput!): CreateUserResponse
+
+  """
+  DGS complains if I try to add an empty Mutation type so just add a dummy field here
+  """
+  ping: String
+}
+
+input CreateUserInput {
+  email: String!
+  username: String!
+  password: String!
+  confirmPassword: String!
+}
+
+type CreateUserResponse {
+  success: Boolean!
+  user: User
+  errors: [Error!]
+}
+
+type CreateUserError implements Error {
+  message: String
+  type: CreateUserErrorType
+}
+
+enum CreateUserErrorType {
+  PASSWORD_MISMATCH
+  USERNAME_ALREADY_EXISTS
+  EMAIL_ALREADY_EXISTS
+  OTHER
+}
+
+type Query {
+  bar(baz: String!): String!
+  foo: String!
+}
+
+interface Error {
+  message: String
+}
+
+type User {
+  username: String
+  email: String
+}

@@ -1,0 +1,29 @@
+
+extend type Mutation {
+  createUser(input: CreateUserInput!): CreateUserResponse
+}
+
+input CreateUserInput {
+  email: String!
+  username: String!
+  password: String!
+  confirmPassword: String!
+}
+
+type CreateUserResponse {
+  success: Boolean!
+  user: User
+  errors: [Error!]
+}
+
+type CreateUserError implements Error {
+  message: String
+  type: CreateUserErrorType
+}
+
+enum CreateUserErrorType {
+  PASSWORD_MISMATCH
+  USERNAME_ALREADY_EXISTS
+  EMAIL_ALREADY_EXISTS
+  OTHER
+}

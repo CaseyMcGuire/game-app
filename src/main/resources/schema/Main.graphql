@@ -1,0 +1,15 @@
+type Query {
+    bar(baz: String!): String!
+    foo: String!
+}
+
+type Mutation {
+    """
+    DGS complains if I try to add an empty Mutation type so just add a dummy field here
+    """
+    ping: String
+}
+
+interface Error {
+    message: String
+}

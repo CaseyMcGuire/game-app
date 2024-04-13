@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class MainController {
 
-  @GetMapping("/")
+  @GetMapping(path = [
+    "/",
+    "/login",
+    "/signup"
+  ])
   fun home(model: Model): String {
     model.addAttribute("entryKey", "index")
     return "index"

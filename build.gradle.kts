@@ -29,7 +29,10 @@ repositories {
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+  implementation("org.springframework.boot:spring-boot-starter-security")
   implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
+  testImplementation("org.springframework.security:spring-security-test")
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
   implementation("org.postgresql:postgresql:42.5.1")
   jooqGenerator("org.postgresql:postgresql:42.5.1")
 

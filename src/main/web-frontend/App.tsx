@@ -16,6 +16,8 @@ import {createRoot} from "react-dom/client";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 
 const useStyles = createUseStyles({
   foo: {
@@ -58,6 +60,8 @@ function AppImpl() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/about" element={<AboutPage />}/>
         <Route path="/blog" element={<BlogPage /> }/>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>
